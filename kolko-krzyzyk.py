@@ -40,11 +40,17 @@ while wybor != 'q':
     print("Jesteś:", wez_znaczek(nr_gracz))
     x = input("Podaj pozycję x: ")
     y = input("Podaj pozycję y: ")
+
     if int(x) > 2:
+        print("x poza zakresem [0, 2]")
         continue
+
     if int(y) > 2:
+        print("y poza zakrestem [0, 2]")
         continue
+
     if plansza[int(x)][int(y)] == "X" or plansza[int(x)][int(y)] == "O":
+        print("Pole zajęte, wybierz inne.")
         continue
     
     plansza[int(x)][int(y)] = wybor
@@ -65,6 +71,5 @@ while wybor != 'q':
     if (sprawdz_kolumna(plansza) == True or sprawdz_wiersze(plansza) == True or sprawdz_skosy1(plansza) == True or sprawdz_skosy2(plansza) == True):
         break
     
-
-    nr_gracz = (nr_gracz + 1) % 2
+    nr_gracz = (nr_gracz + 1) % 2   
     
