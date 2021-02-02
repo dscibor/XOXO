@@ -62,12 +62,6 @@ while wybor != 'q':
         print('-', end='')
     print()
 
-    
-    
-    
-    sprawdz_kolumna(plansza)
-    sprawdz_skosy1(plansza)
-    sprawdz_skosy2(plansza)
     if (sprawdz_kolumna(plansza) == True or sprawdz_wiersze(plansza) == True or sprawdz_skosy1(plansza) == True or sprawdz_skosy2(plansza) == True):
         break
     
