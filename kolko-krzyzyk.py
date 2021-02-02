@@ -1,5 +1,6 @@
 plansza = [['-','-','-'], ['-','-','-'], ['-','-','-']]
 
+
 wybor = ""
 nr_gracz = 0
 
@@ -41,11 +42,11 @@ while wybor != 'q':
     x = input("Podaj pozycję x: ")
     y = input("Podaj pozycję y: ")
 
-    if int(x) > 2:
+    if int(x) > 2 or int(x) < 0:
         print("x poza zakresem [0, 2]")
         continue
 
-    if int(y) > 2:
+    if int(y) > 2 or int(y) < 0:
         print("y poza zakrestem [0, 2]")
         continue
 
