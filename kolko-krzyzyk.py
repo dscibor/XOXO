@@ -11,22 +11,28 @@ def sprawdz_wiersze(plansza):
             return True
 
 def sprawdz_wiersz(wiersz):
-    if wiersz[0] == wiersz[1] == wiersz[2] and (wiersz[0] == "x" or wiersz[0] == "o"):
+    if wiersz[0] == wiersz[1] == wiersz[2] and ((wiersz[0] == "X") or (wiersz[0] == "O")):
         print("WIN POZIOM")
         return True
 
 def sprawdz_kolumna(plansza):
-    if plansza[0][0] == plansza[1][0] == plansza[2][0] and (plansza[0][0] == "x" or plansza[0][0] == "o"):
-        print("WIN PION")   
-        return True 
+    if plansza[0][0] == plansza[1][0] == plansza[2][0] and ((plansza[0][0] == "X") or (plansza[0][0] == "O")):
+        print("WIN PION") 
+        return True
+    elif plansza[0][1] == plansza[1][1] == plansza[2][1] and ((plansza[0][1] == "X") or (plansza[0][1] == "O")):
+        print("WIN PION") 
+        return True
+    elif plansza[0][2] == plansza[1][2] == plansza[2][2] and ((plansza[0][2] == "X") or (plansza[0][2] == "O")):
+        print("WIN PION") 
+        return True
 
 def sprawdz_skosy1(plansza):
-    if plansza[0][0] == plansza[1][1] == plansza[2][2] and (plansza[0][0] == "x" or plansza[0][0] == "o"):
+    if plansza[0][0] == plansza[1][1] == plansza[2][2] and ((plansza[0][0] == "X") or (plansza[0][0] == "O")):
         print("WIN SKOS 1")
         return True
     
 def sprawdz_skosy2(plansza):
-    if plansza[0][2] == plansza[1][1] == plansza[2][0] and (plansza[0][2] == "x" or plansza[0][2] == "o"):
+    if plansza[0][2] == plansza[1][1] == plansza[2][0] and ((plansza[0][2] == "X") or (plansza[0][2] == "O")):
         print("WIN SKOS 2")
         return True
 
@@ -69,7 +75,7 @@ while wybor != 'q':
         print('-', end='')
     print()
 
-    if (sprawdz_kolumna(plansza) == True or sprawdz_wiersze(plansza) == True or sprawdz_skosy1(plansza) == True or sprawdz_skosy2(plansza) == True):
+    if ((sprawdz_kolumna(plansza) == True) or (sprawdz_wiersze(plansza) == True) or (sprawdz_skosy1(plansza) == True) or (sprawdz_skosy2(plansza) == True)):
         break
     
     nr_gracz = (nr_gracz + 1) % 2   
