@@ -4,6 +4,12 @@ plansza = [['-','-','-'], ['-','-','-'], ['-','-','-']]
 wybor = ""
 nr_gracz = 0
 
+def sprawdz_kolumny(plansza):
+    for nr_kolumny in range(3):
+        wynik_sprawdzenia = sprawdz_kolumna(plansza, nr_kolumny)
+        if wynik_sprawdzenia == True:
+            return True 
+
 def sprawdz_wiersze(plansza):
     for wiersz in plansza:
         wynik_sprawdzenia = sprawdz_wiersz(wiersz)
@@ -15,17 +21,11 @@ def sprawdz_wiersz(wiersz):
         print("WIN POZIOM")
         return True
 
-def sprawdz_kolumna(plansza):
-    if plansza[0][0] == plansza[1][0] == plansza[2][0] and ((plansza[0][0] == "X") or (plansza[0][0] == "O")):
+def sprawdz_kolumna(plansza, nr_kolumny):
+    if plansza[0][nr_kolumny] == plansza[1][nr_kolumny] == plansza[2][nr_kolumny] and ((plansza[0][nr_kolumny] == "X") or (plansza[0][nr_kolumny] == "O")):
         print("WIN PION") 
         return True
-    elif plansza[0][1] == plansza[1][1] == plansza[2][1] and ((plansza[0][1] == "X") or (plansza[0][1] == "O")):
-        print("WIN PION") 
-        return True
-    elif plansza[0][2] == plansza[1][2] == plansza[2][2] and ((plansza[0][2] == "X") or (plansza[0][2] == "O")):
-        print("WIN PION") 
-        return True
-
+    
 def sprawdz_skosy1(plansza):
     if plansza[0][0] == plansza[1][1] == plansza[2][2] and ((plansza[0][0] == "X") or (plansza[0][0] == "O")):
         print("WIN SKOS 1")
@@ -75,7 +75,7 @@ while wybor != 'q':
         print('-', end='')
     print()
 
-    if ((sprawdz_kolumna(plansza) == True) or (sprawdz_wiersze(plansza) == True) or (sprawdz_skosy1(plansza) == True) or (sprawdz_skosy2(plansza) == True)):
+    if ((sprawdz_kolumny(plansza) == True) or (sprawdz_wiersze(plansza) == True) or (sprawdz_skosy1(plansza) == True) or (sprawdz_skosy2(plansza) == True)):
         break
     
     nr_gracz = (nr_gracz + 1) % 2   
